@@ -17,3 +17,10 @@
 - make entities
 - make migration
 - Insert Data
+
+### Day 2
+
+- setup express and add graphql middleware
+- Create a resolver
+- Make context type
+- Create a Post crud operation
