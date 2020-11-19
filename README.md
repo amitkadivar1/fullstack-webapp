@@ -24,3 +24,12 @@
 - Create a resolver
 - Make context type
 - Create a Post crud operation
+
+### Day 3
+
+- Make User entities
+- Make User resolvers
+- make a login and register user mutation
+- encrypt and verify password using argon2
+- handle exception and error
+- make a User Response
