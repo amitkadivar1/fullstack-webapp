@@ -33,3 +33,10 @@
 - encrypt and verify password using argon2
 - handle exception and error
 - make a User Response
+
+
+### Day 4 
+
+- Session pass in Context 
+- Store cookie and get current login user 
+- make me resolver

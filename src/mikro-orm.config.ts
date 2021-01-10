@@ -12,7 +12,7 @@ export default {
   dbName: "lireddit",
   user: "postgres",
   type: "postgresql",
-  password: "secured",
+  password: "amit",
   host: "localhost",
   port: 5432,
   debug: !__prod__,

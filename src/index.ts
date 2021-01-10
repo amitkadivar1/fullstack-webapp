@@ -12,10 +12,11 @@ import { UserResolver } from "./resolvers/user";
 import redis from "redis";
 import session from "express-session";
 import connectRedis from "connect-redis";
+import { MyContext } from 'src/types';
 
 const main = async () => {
   const orm = await MikroORM.init(microConfig);
-  // await orm.getMigrator().up();
+  await orm.getMigrator().up();
   const app = express();
 
   const RedisStore = connectRedis(session);
@@ -34,6 +35,7 @@ const main = async () => {
         sameSite: "lax", //csrf
         secure: __prod__, //if https then work
       },
+      saveUninitialized:false,
       secret: "qwertyuipasdfghjlzxcbn,",
       resave: false,
     })
@@ -44,7 +46,7 @@ const main = async () => {
       resolvers: [HelloResolver, PostResolver, UserResolver],
       validate: false,
     }),
-    context: ({ req, res }) => ({ em: orm.em, req, res }),
+    context: ({ req, res }):MyContext => ({ em: orm.em, req, res }),
   });
 
   apolloServer.applyMiddleware({ app });
